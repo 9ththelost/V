@@ -7,7 +7,7 @@ import java.awt.Color;
 /**
  * VIII - a robot by Neve Negra
  */
-public class VIII extends AdvancedRobot
+public class VIII_2 extends AdvancedRobot
 {
 	/**
 	 * run: VIII's default behavior
@@ -26,23 +26,24 @@ public class VIII extends AdvancedRobot
 		// Robot main loop
 		while(true) {
 			// Replace the next 4 lines with any behavior you would like
-			ahead(200);
+			ahead(110);
             setTurnGunRight(360);
             setTurnRight(90);
 			execute();
-			ahead(200);
+			ahead(110);
             setTurnGunRight(360);  
 			setTurnRight(90);
 			execute();
-			ahead(200);
+			ahead(110);
             setTurnGunRight(360);
 			setTurnRight(90);
 			execute();
-			ahead(200);  
+			ahead(110);  
 			setTurnRight(90);
 			setTurnGunRight(360); 
 			execute();
-			
+			back(50);
+
 		}
 	}
 
@@ -60,10 +61,10 @@ public class VIII extends AdvancedRobot
 	public void onHitByBullet(HitByBulletEvent e) {
 		// Replace the next line with any behavior you would like
 		back(30);
-		setTurnGunRight(360);
-		setTurnLeft(130);
-		setAhead(100);
-		execute();
+		turnGunRight(120);
+		turnLeft(90);
+		ahead(40);
+		turnGunLeft(120);
 	}
 	
 	/**
@@ -71,9 +72,8 @@ public class VIII extends AdvancedRobot
 	 */
 	public void onHitWall(HitWallEvent e) {
 		// Replace the next line with any behavior you would like
-		setBack(20);
-		setTurnLeft(130);
+		back(20);
+		turnLeft(90);
 		ahead(100);
-		execute();
 	}	
 }
