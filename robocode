@@ -1,0 +1,79 @@
+package Unicarioca_Meier;
+import robocode.*;
+import java.awt.Color;
+
+// API help : http://robocode.sourceforge.net/docs/robocode/robocode/Robot.html
+
+/**
+ * VIII - a robot by Neve Negra
+ */
+public class VIII extends AdvancedRobot
+{
+	/**
+	 * run: VIII's default behavior
+	 */
+	public void run() {
+		// Initialization of the robot should be put here
+
+		// After trying out your robot, try uncommenting the import at the top,
+		// and the next line:
+
+		setColors(Color.black,Color.red,Color.white); // body,gun,radar
+        
+        setScanColor(Color.red);
+		setBulletColor(Color.magenta);
+		
+		// Robot main loop
+		while(true) {
+			// Replace the next 4 lines with any behavior you would like
+			ahead(200);
+            setTurnGunRight(360);
+            setTurnRight(90);
+			execute();
+			ahead(200);
+            setTurnGunRight(360);  
+			setTurnRight(90);
+			execute();
+			ahead(200);
+            setTurnGunRight(360);
+			setTurnRight(90);
+			execute();
+			ahead(200);  
+			setTurnRight(90);
+			setTurnGunRight(360); 
+			execute();
+			
+		}
+	}
+
+	/**
+	 * onScannedRobot: What to do when you see another robot
+	 */
+	public void onScannedRobot(ScannedRobotEvent e) {
+		// Replace the next line with any behavior you would like
+		fire(1);
+	}
+
+	/**
+	 * onHitByBullet: What to do when you're hit by a bullet
+	 */
+	public void onHitByBullet(HitByBulletEvent e) {
+		// Replace the next line with any behavior you would like
+		back(30);
+		setTurnGunRight(360);
+		setTurnLeft(130);
+		setAhead(100);
+		execute();
+	}
+	
+	/**
+	 * onHitWall: What to do when you hit a wall
+	 */
+	public void onHitWall(HitWallEvent e) {
+		// Replace the next line with any behavior you would like
+		setBack(20);
+		setTurnLeft(130);
+		ahead(100);
+		execute();
+	}	
+}
